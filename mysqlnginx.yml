@@ -7,14 +7,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-nginx
-      version: blue
+      run: hello-nginx
   template:
     metadata:
       name: hello-nginx
       labels:
-        app: hello-nginx
-        version: blue
+        run: hello-nginx
     spec:
       containers:
       - name: nginx-container
