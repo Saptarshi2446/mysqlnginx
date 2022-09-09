@@ -26,7 +26,7 @@ kind: Service
 metadata:
   name: nginx-svc
   labels:
-    app: hello-nginx
+    run: hello-nginx
 spec:
   selector:
     run: hello-nginx
