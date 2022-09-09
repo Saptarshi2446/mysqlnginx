@@ -29,8 +29,7 @@ metadata:
     app: hello-nginx
 spec:
   selector:
-    app: hello-nginx
-    version: blue
+    run: hello-nginx
   type: NodePort
   ports:
   - nodePort: 32223
