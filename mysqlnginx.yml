@@ -7,13 +7,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-app
+      app: hello-nginx
       version: blue
   template:
     metadata:
-      name: nginx-pod
+      name: hello-nginx
       labels:
-        app: nginx-app
+        app: hello-nginx
         version: blue
     spec:
       containers:
@@ -28,10 +28,10 @@ kind: Service
 metadata:
   name: nginx-svc
   labels:
-    app: nginx-app
+    app: hello-nginx
 spec:
   selector:
-    app: nginx-app
+    app: hello-nginx
     version: blue
   type: NodePort
   ports:
