@@ -2,23 +2,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-blue-whale
+  name: hello-nginx
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
-      app: hello-whale-app
+      app: nginx-app
       version: blue
   template:
     metadata:
-      name: hello-blue-whale-pod
+      name: nginx-pod
       labels:
-        app: hello-whale-app
+        app: nginx-app
         version: blue
     spec:
       containers:
-      - name: hello-whale-container
-        image: sachinjp/hellowhale:latest
+      - name: nginx-container
+        image: saptarshi2446/mysqlnginx:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -26,12 +26,12 @@ spec:
 apiVersion: v1
 kind: Service 
 metadata:
-  name: hello-whale-svc
+  name: nginx-svc
   labels:
-    app: hello-whale-app
+    app: nginx-app
 spec:
   selector:
-    app: hello-whale-app
+    app: nginx-app
     version: blue
   type: NodePort
   ports:
